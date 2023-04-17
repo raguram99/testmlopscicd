@@ -26,6 +26,7 @@ resource "aws_codebuild_project" "project" {
     type            = "GITHUB"
     location        = var.source_location
     git_clone_depth = 1
+    buildspec = file("buildspec/apply-buildspec.yml")
 
   }
 

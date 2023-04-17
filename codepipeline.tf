@@ -40,7 +40,7 @@ resource "aws_codepipeline" "codepipeline" {
       output_artifacts = ["BuildArtifact"]
       namespace        = "BuildVariables"
       configuration = {
-        ProjectName          = "mlops-dlx-dev-pipeline"
+        ProjectName          = "aws_codebuild_project.project.name"
       }
     }
   }
