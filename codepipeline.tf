@@ -1,5 +1,5 @@
 resource "aws_codepipeline" "codepipeline" { 
-  name     = var.name
+  name     = "codebuild-mlops-cicd"
   role_arn = aws_iam_role.tf-codepipeline-role.arn
 
   artifact_store {
@@ -39,8 +39,8 @@ resource "aws_codepipeline" "codepipeline" {
       input_artifacts  = ["SourceArtifact"]
       output_artifacts = ["BuildArtifact"]
       namespace        = "BuildVariables"
-      configuration = {
-        ProjectName          = "aws_codebuild_project.project.name"
+      configuration    = {
+        ProjectName    = "codebuild-mlops-cicd"
       }
     }
   }
