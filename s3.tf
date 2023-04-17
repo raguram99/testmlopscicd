@@ -4,3 +4,8 @@ resource "aws_s3_bucket" "codepipeline_artifacts" {
   Environment = "Dev"
   }
 } 
+
+resource "aws_s3_bucket" "name" {
+  bucket = "testarn-arn-mlops"
+  
+}
